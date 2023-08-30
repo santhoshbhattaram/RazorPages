@@ -1,0 +1,38 @@
+﻿@page
+@model RazorPages.Pages.Category.DeleteModel
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="categoryobj.Name"> </label>
+            <input type="hidden" asp-for="categoryobj.Id" />
+            <input class="form-control" asp-for="categoryobj.Name" />
+            <label asp-for="categoryobj.DisplayOrder"> </label>
+            <input asp-for="categoryobj.DisplayOrder" class=" form-control" />
+            <span asp-validation-for="categoryobj.Name" class="text-danger"></span>
+            <span asp-validation-for="categoryobj.DisplayOrder" class="text-danger"></span>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-danger form-control">Delete</button>
+            </div>
+            <div class="col-6">
+                <a asp-page="Index" class="btn btn-outline-secondary form-control">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@* client side validation using provided validation jquery scripts importing the partial views  all range and required*@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial.cshtml" />
+
+    }
+}

@@ -11,7 +11,7 @@ Validations, Model Creation, Database schema (key), required for not null and ht
 
 namespace RazorPages.Models
 {
-    public class Category
+    public class Categories
     {
         [Key]
         public int Id { get; set; }
